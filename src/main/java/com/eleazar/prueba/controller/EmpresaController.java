@@ -1,6 +1,5 @@
 package com.eleazar.prueba.controller;
 
-import com.eleazar.prueba.domain.EmpresaDto;
 import com.eleazar.prueba.entity.Empresa;
 import com.eleazar.prueba.service.IEmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +12,12 @@ public class EmpresaController {
     @Autowired
     private IEmpresaService empresaService;
     @GetMapping("/create")
-    public EmpresaDto crearEmpresa(@RequestBody Empresa empresa) {
+    public Empresa crearEmpresa(@RequestBody Empresa empresa) {
         return empresaService.crear(empresa);
     }
 
     @GetMapping("/obtener")
-    public List<EmpresaDto> obtenerEmpresa() {
+    public List<Empresa> obtenerEmpresa() {
         return empresaService.obtener();
     }
 
